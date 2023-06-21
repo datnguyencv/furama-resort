@@ -12,6 +12,12 @@
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
@@ -47,6 +53,23 @@
 					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+							Admin
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/add-room.html">Create Product</a>
+							<a class="dropdown-item" href="/edit-room.html">Edit Product</a>
+							<a class="dropdown-item" href="/rooms.html">List Product</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="/add-contract.html">Create Contract</a>
+							<a class="dropdown-item" href="/list-contract.html">Contract List</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="/add-customer.html">Create Customer</a>
+							<a class="dropdown-item" href="/edit-customer.html">Edit Customer</a>
+							<a class="dropdown-item" href="/list-customer.html">Customer List</a>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -60,7 +83,8 @@
 				<div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
 					<div class="text">
 						<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home</a></span>
-							<span>About</span></p>
+							<span>About</span>
+						</p>
 						<h1 class="mb-4 bread">Rooms</h1>
 					</div>
 				</div>
@@ -94,10 +118,9 @@
 									<hr>
 									<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span
 												class="icon-long-arrow-right"></span></a>
-										<button class="btn-edit" onclick="editRoom()"><span
-												class="icon-edit"></span></button>
-										<button class="btn-delete" onclick="deleteRoom()"><span
-												class="icon-delete"></span></button>
+										<a href="/edit-room.html" class="btn-edit"><span class="icon-edit"></span></a>
+										<button data-bs-toggle="modal" data-bs-target="#modalId"
+											class="btn-delete"><span class="icon-delete"></span></button>
 									</p>
 								</div>
 							</div>
@@ -518,3 +541,40 @@
 </body>
 
 </html>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitleId">Delete Box</h5>
+
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					You want delete ?
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+				<button type="button" class="btn btn-primary">Yes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	var modalId = document.getElementById('modalId');
+
+	modalId.addEventListener('show.bs.modal', function (event) {
+		// Button that triggered the modal
+		let button = event.relatedTarget;
+		// Extract info from data-bs-* attributes
+		let recipient = button.getAttribute('data-bs-whatever');
+
+		// Use above variables to manipulate the DOM
+	});
+</script>
