@@ -71,16 +71,16 @@ export default function ListProduct() {
                         <a href="/" className="btn-custom">
                           View Room Details{" "}
                           <span className="icon-long-arrow-right" />
-                          <button className="btn btn-sm btn-primary">
-                            <Link
-                              className="icon-edit"
-                              style={{ textDecoration: "none", color: "white" }}
-                              to={`/product/edit/${roomIs.id}`}
-                            ></Link>
-                          </button>
-                          <Button className="btn btn-sm btn-danger icon-delete"></Button>
                         </a>
                       </p>
+                      <button className="btn btn-sm btn-primary">
+                        <Link
+                          className="icon-edit"
+                          style={{ textDecoration: "none", color: "white" }}
+                          to={`/product/edit/${roomIs.id}`}
+                        ></Link>
+                      </button>
+                      <Button className="btn btn-sm btn-danger icon-delete"></Button>
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,6 @@ export default function ListProduct() {
       <Link to="/product/create">
         <button className="btn btn-sm btn-primary">Create Product</button>
       </Link>
-
       <table
         id="productTable"
         className="table table-light table-striped table-bordered"
@@ -141,7 +140,7 @@ export default function ListProduct() {
                 {roomTypes.filter((val) => val.id === value.roomType)[0]?.name}
               </td>
               <td>
-                <button className="icon-edit">
+                <button className="btn btn-primary icon-edit">
                   <Link
                     style={{ textDecoration: "none" }}
                     className="btn-sm"
@@ -150,7 +149,7 @@ export default function ListProduct() {
                 </button>
               </td>
               <td>
-                <Button className="icon-delete"></Button>
+                <Button className="icon-delete btn-danger"></Button>
               </td>
             </tr>
           ))}
@@ -162,7 +161,7 @@ export default function ListProduct() {
         aria-label="Page navigation example"
       >
         <ul className="pagination">
-          <li className="page-item">
+          <li className="page-item mr-2">
             <a
               className="page-link"
               href="/#"
@@ -175,7 +174,7 @@ export default function ListProduct() {
               Trước
             </a>
           </li>
-          <li className="page-item">
+          <li className="page-item mr-3">
             <a
               className="page-link"
               href="/#"
@@ -188,7 +187,7 @@ export default function ListProduct() {
               1
             </a>
           </li>
-          <li className="page-item">
+          <li className="page-item mr-3">
             <a
               className="page-link"
               href="/#"
@@ -214,7 +213,7 @@ export default function ListProduct() {
               3
             </a>
           </li>
-          <li className="page-item">
+          <li className="page-item ml-2">
             <a
               className="page-link"
               href="/#"
@@ -233,5 +232,3 @@ export default function ListProduct() {
     </>
   );
 }
-
-
