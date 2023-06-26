@@ -32,9 +32,9 @@ export const create = async (product) => {
   }
 };
 
-export const update = async (id, product) => {
+export const update = async (product) => {
   try {
-    await axios.put(`http://localhost:8080/room/${id}`, { ...product });
+    await axios.put(`http://localhost:8080/room/${product.id}`, { ...product });
   } catch (err) {
     console.log(err);
   }

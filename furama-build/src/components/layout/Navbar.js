@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { DropdownMenu } from "./commons/DropdownMenu";
 
-
 export function Navbar() {
   return (
     <>
@@ -56,7 +55,7 @@ export function Navbar() {
                   Contact
                 </NavLink>
               </li>
-              <DropdownMenu/>
+              <DropdownMenu />
             </ul>
           </div>
         </div>

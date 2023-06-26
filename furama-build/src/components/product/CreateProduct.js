@@ -32,7 +32,7 @@ export function CreateProduct() {
         area: "",
         cost: "",
         maxPeople: "",
-        standard: "",
+        standardRoom: "",
         description: "",
         poolArea: "",
         numberOfFloors: "",
@@ -45,20 +45,21 @@ export function CreateProduct() {
         area: Yup.number().required("Không được để trống"),
         cost: Yup.number().required("Không được để trống"),
         maxPeople: Yup.number().required("Không được để trống"),
-        standard: Yup.string().required("Không được để trống"),
+        standardRoom: Yup.string().required("Không được để trống"),
         description: Yup.string().required("Không được để trống"),
         poolArea: Yup.number().required("Không được để trống"),
         numberOfFloors: Yup.number().required("Không được để trống"),
       })}
       onSubmit={async (values) => {
-        values.roomType = typeRoom;
-        values.rentType = typeRent;console.log(typeRent,typeRoom);
+        values.roomType = parseInt(typeRoom);
+        values.rentType = parseInt(typeRent);
+        console.log(typeRent, typeRoom);
         await ProductService.create(values);
         alert("Thêm mới thành công");
         navigate("/product/list");
       }}
     >
-      <div>
+      <div className="container">
         <div className="p-3">
           <h2 className="text-center fw-bold">Product create</h2>
           <nav className="navbar navbar-expand-lg py-0 my-0">
@@ -156,21 +157,21 @@ export function CreateProduct() {
           </div>
 
           <div className="mt-3 form-group">
-            <label htmlFor="standard" style={{ fontWeight: "bold" }}>
+            <label htmlFor="standardRoom" style={{ fontWeight: "bold" }}>
               Tiêu chuẩn phòng:<span style={{ color: "red" }}>*</span>
             </label>
             <div className="input-group">
               <Field
                 type="text"
-                id="standard"
+                id="standardRoom"
                 className="form-control"
                 placeholder="Tiêu chuẩn phòng"
-                name="standard"
+                name="standardRoom"
               />
             </div>
             <div>
               <ErrorMessage
-                name="standard"
+                name="standardRoom"
                 component="span"
                 className="form-err text-danger"
               />
@@ -272,10 +273,10 @@ export function CreateProduct() {
             <div className="input-group">
               <Field
                 id="roomType"
-                className="form-control form-control-lg"
                 name="roomType"
                 render={() => (
                   <select
+                    className="form-control form-control-lg"
                     style={{ borderRadius: 5, width: "94%" }}
                     onChange={(event) => handleTypeChange1(event.target.value)}
                   >
@@ -297,10 +298,10 @@ export function CreateProduct() {
             <div className="input-group">
               <Field
                 id="rentType"
-                className="form-control form-control-lg"
                 name="rentType"
                 render={() => (
                   <select
+                    className="form-control form-control-lg"
                     style={{ borderRadius: 5, width: "94%" }}
                     onChange={(event) => handleTypeChange2(event.target.value)}
                   >

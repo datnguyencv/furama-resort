@@ -1,274 +1,330 @@
 {
-    "customers": [
-      {
+  "customers": [
+    {
+      "id": 1,
+      "name": "Tiến Đạt",
+      "gender": "Nam",
+      "age": 18,
+      "phoneNumber": "0702712217",
+      "address": "99 Bạch ĐằNg",
+      "customerTypeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Minh Thông",
+      "gender": "Nam",
+      "age": "20",
+      "phoneNumber": "0987987987",
+      "address": "99 Bạch Đằng",
+      "customerTypeId": 2
+    },
+    {
+      "name": "Văn Trí",
+      "gender": "Nam",
+      "age": "18",
+      "phoneNumber": "077788888",
+      "address": "01 Trần Hưng Đạo",
+      "customerTypeId": 2,
+      "id": 3
+    },
+    {
+      "name": "Tiến Hưng",
+      "gender": "Nam",
+      "age": "25",
+      "phoneNumber": "0989999999",
+      "address": "02 Trần Hưng Đạo",
+      "customerTypeId": 3,
+      "id": 4
+    },
+    {
+      "name": "Minh Sơn",
+      "gender": "Nam",
+      "age": "26",
+      "phoneNumber": "0123456789",
+      "address": "295 Trần Hưng Đạo",
+      "customerTypeId": 1,
+      "id": 5
+    },
+    {
+      "name": "Doremon",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0919895195",
+      "address": "Da nang",
+      "customerTypeId": 3,
+      "id": 6
+    },
+    {
+      "name": "Doremon Ab",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0919895195",
+      "address": "Da nang",
+      "customerTypeId": 2,
+      "id": 7
+    },
+    {
+      "name": "Minh Thông",
+      "gender": "Nữ",
+      "age": "25",
+      "phoneNumber": "0919895193",
+      "address": "Da Nang",
+      "customerTypeId": 2,
+      "id": 8
+    },
+    {
+      "name": "Doremon Ab",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0919895192",
+      "address": "Da nang",
+      "customerTypeId": 2,
+      "id": 9
+    },
+    {
+      "name": "Doremon Ab",
+      "gender": "Nữ",
+      "age": "23",
+      "phoneNumber": "0919895193",
+      "address": "Da nang",
+      "customerTypeId": 2,
+      "id": 10
+    },
+    {
+      "name": "Doremon",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0919895193",
+      "address": "Da Nang",
+      "customerTypeId": 2,
+      "id": 11
+    },
+    {
+      "name": "Doremon",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0979895193",
+      "address": "Da nang",
+      "customerTypeId": 3,
+      "id": 12
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    }
+  ],
+  "room": [
+    {
+      "id": 1,
+      "name": "Bơi lội",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 20,
+      "roomType": 2,
+      "rentType": 1,
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "roomFree": "Đồ bơi, Kính bơi",
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "Phòng đơn",
+      "area": 50,
+      "cost": 30,
+      "maxPeople": 1,
+      "roomType": 1,
+      "rentType": 1,
+      "standardRoom": "Single room",
+      "description": "Phòng đơn tiện nghi",
+      "poolArea": 0,
+      "numberOfFloors": 1,
+      "roomFree": "Giường, Tủ quần áo",
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Bơi lội",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 20,
+      "roomType": 2,
+      "rentType": 1,
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "roomFree": "Đồ bơi, Kính bơi",
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "Bơi lội",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 20,
+      "roomType": 2,
+      "rentType": 1,
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "roomFree": "Đồ bơi, Kính bơi",
+      "status": false
+    },
+    {
+      "name": "Doremon",
+      "area": 12,
+      "cost": 3,
+      "maxPeople": 3,
+      "standardRoom": "Twin bedroom",
+      "description": "3",
+      "poolArea": 3,
+      "numberOfFloors": 3,
+      "roomFree": "3",
+      "rentType": 1,
+      "roomType": 1,
+      "id": 5
+    },
+    {
+      "name": "Doremon Ab",
+      "area": 2,
+      "cost": 2,
+      "maxPeople": 2,
+      "standardRoom": "Single room",
+      "description": "2",
+      "poolArea": 22,
+      "numberOfFloors": 12,
+      "roomFree": "2",
+      "rentType": 2,
+      "roomType": 3,
+      "id": 6
+    },
+    {
+      "name": "Doremon Ab",
+      "area": 123,
+      "cost": 3000,
+      "maxPeople": 12,
+      "standardRoom": "Twin bedroom",
+      "description": "Xe đạp",
+      "poolArea": 123,
+      "numberOfFloors": 2,
+      "roomFree": "Xe đạp",
+      "rentType": 2,
+      "roomType": 1,
+      "id": 7
+    },
+    {
+      "name": "Doremon Ab Abbb",
+      "area": 200,
+      "cost": 3000,
+      "maxPeople": 12,
+      "standardRoom": "Twin bedroom",
+      "description": "Big",
+      "poolArea": 200,
+      "numberOfFloors": 2,
+      "roomFree": "Đạp",
+      "rentType": 1,
+      "roomType": 3,
+      "id": 8
+    },
+    {
+      "name": "Doremon Ab",
+      "area": 123,
+      "cost": 1234,
+      "maxPeople": 12,
+      "standardRoom": "123",
+      "description": "123",
+      "poolArea": 123,
+      "numberOfFloors": 2,
+      "roomFree": "123",
+      "rentType": 1,
+      "roomType": 1,
+      "id": 9
+    },
+    {
+      "name": "123",
+      "area": 123,
+      "cost": 123,
+      "maxPeople": 12,
+      "standardRoom": "123",
+      "description": "123",
+      "poolArea": 123,
+      "numberOfFloors": 12,
+      "roomFree": "123",
+      "rentType": 1,
+      "roomType": 3,
+      "id": 10
+    }
+  ],
+  "roomType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "VND"
+    },
+    {
+      "id": 2,
+      "name": "USD"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "room": {
         "id": 1,
-        "name": "Tiến Đạt",
-        "gender": "Nam",
-        "age": 18,
-        "phoneNumber": "0702712217",
-        "address": "99 Bạch ĐằNg",
-        "customerTypeId": 1
+        "name": "Bơi lội"
       },
-      {
+      "customer": {
+        "id": 1,
+        "name": "Tiến Đạt"
+      },
+      "dateStart": "14/10/2022",
+      "dateEnd": "23/06/2023",
+      "deposit": "5000",
+      "totalMoney": "30000",
+      "accompaniedFacility": "xe đạp"
+    },
+    {
+      "id": 2,
+      "room": {
+        "id": 1,
+        "name": "Bơi lội"
+      },
+      "customer": {
         "id": 2,
-        "name": "Minh Thông",
-        "gender": "Nam",
-        "age": "20",
-        "phoneNumber": "0987987987",
-        "address": "99 Bạch Đằng",
-        "customerTypeId": 2
+        "name": "Sơn"
       },
-      {
-        "name": "Văn Trí",
-        "gender": "Nam",
-        "age": "18",
-        "phoneNumber": "077788888",
-        "address": "01 Trần Hưng Đạo",
-        "customerTypeId": 2,
-        "id": 3
-      },
-      {
-        "name": "Tiến Hưng",
-        "gender": "Nam",
-        "age": "25",
-        "phoneNumber": "0989999999",
-        "address": "02 Trần Hưng Đạo",
-        "customerTypeId": 3,
-        "id": 4
-      },
-      {
-        "name": "Minh Sơn",
-        "gender": "Nam",
-        "age": "26",
-        "phoneNumber": "0123456789",
-        "address": "295 Trần Hưng Đạo",
-        "customerTypeId": 1,
-        "id": 5
-      },
-      {
-        "name": "Doremon",
-        "gender": "Nam",
-        "age": "22",
-        "phoneNumber": "0919895195",
-        "address": "Da nang",
-        "customerTypeId": 3,
-        "id": 6
-      },
-      {
-        "name": "Doremon Ab",
-        "gender": "Nam",
-        "age": "22",
-        "phoneNumber": "0919895195",
-        "address": "Da nang",
-        "customerTypeId": 2,
-        "id": 7
-      },
-      {
-        "name": "Minh Thông",
-        "gender": "Nữ",
-        "age": "25",
-        "phoneNumber": "0919895193",
-        "address": "Da Nang",
-        "customerTypeId": 2,
-        "id": 8
-      },
-      {
-        "name": "Doremon Ab",
-        "gender": "Nam",
-        "age": "22",
-        "phoneNumber": "0919895192",
-        "address": "Da nang",
-        "customerTypeId": 2,
-        "id": 9
-      },
-      {
-        "name": "Doremon Ab",
-        "gender": "Nữ",
-        "age": "23",
-        "phoneNumber": "0919895193",
-        "address": "Da nang",
-        "customerTypeId": 2,
-        "id": 10
-      },
-      {
-        "name": "Doremon",
-        "gender": "Nam",
-        "age": "22",
-        "phoneNumber": "0919895193",
-        "address": "Da Nang",
-        "customerTypeId": 2,
-        "id": 11
-      },
-      {
-        "name": "Doremon",
-        "gender": "Nam",
-        "age": "22",
-        "phoneNumber": "0979895193",
-        "address": "Da nang",
-        "customerTypeId": 3,
-        "id": 12
-      }
-    ],
-    "customerType": [
-      {
-        "id": 1,
-        "name": "Diamond"
-      },
-      {
-        "id": 2,
-        "name": "Gold"
-      },
-      {
-        "id": 3,
-        "name": "Silver"
-      }
-    ],
-    "room": [
-      {
-        "id": 1,
-        "name": "Bơi lội",
-        "area": 100,
-        "cost": 50,
-        "maxPeople": 20,
-        "roomType": 2,
-        "rentType": 1,
-        "standardRoom": "Twin bedroom",
-        "description": "Tốt",
-        "poolArea": 50,
-        "numberOfFloors": 3,
-        "roomFree": "Đồ bơi, Kính bơi",
-        "status": false
-      },
-      {
-        "id": 2,
-        "name": "Phòng đơn",
-        "area": 50,
-        "cost": 30,
-        "maxPeople": 1,
-        "roomType": 1,
-        "rentType": 1,
-        "standardRoom": "Single room",
-        "description": "Phòng đơn tiện nghi",
-        "poolArea": 0,
-        "numberOfFloors": 1,
-        "roomFree": "Giường, Tủ quần áo",
-        "status": true
-      },
-      {
-        "id": 3,
-        "name": "Bơi lội",
-        "area": 100,
-        "cost": 50,
-        "maxPeople": 20,
-        "roomType": 2,
-        "rentType": 1,
-        "standardRoom": "Twin bedroom",
-        "description": "Tốt",
-        "poolArea": 50,
-        "numberOfFloors": 3,
-        "roomFree": "Đồ bơi, Kính bơi",
-        "status": false
-      },
-      {
-        "id": 4,
-        "name": "Bơi lội",
-        "area": 100,
-        "cost": 50,
-        "maxPeople": 20,
-        "roomType": 2,
-        "rentType": 1,
-        "standardRoom": "Twin bedroom",
-        "description": "Tốt",
-        "poolArea": 50,
-        "numberOfFloors": 3,
-        "roomFree": "Đồ bơi, Kính bơi",
-        "status": false
-      },
-      {
-        "name": "Doremon",
-        "area": 12,
-        "cost": 3,
-        "maxPeople": 3,
-        "standard": "3",
-        "description": "3",
-        "poolArea": 3,
-        "numberOfFloors": 3,
-        "roomFree": "3",
-        "rentType": 1,
-        "roomType": 1,
-        "id": 5
-      },
-      {
-        "name": "Doremon Ab",
-        "area": 2,
-        "cost": 2,
-        "maxPeople": 2,
-        "standard": "2",
-        "description": "2",
-        "poolArea": 22,
-        "numberOfFloors": 12,
-        "roomFree": "2",
-        "rentType": 1,
-        "roomType": 3,
-        "id": 6
-      }
-    ],
-    "roomType": [
-      {
-        "id": 1,
-        "name": "Diamond"
-      },
-      {
-        "id": 2,
-        "name": "Gold"
-      },
-      {
-        "id": 3,
-        "name": "Silver"
-      }
-    ],
-    "rentType": [
-      {
-        "id": 1,
-        "name": "VND"
-      },
-      {
-        "id": 1,
-        "name": "USD"
-      }
-    ],
-    "contract": [
-      {
-        "id": 1,
-        "room": {
-          "id": 1,
-          "name": "Bơi lội"
-        },
-        "customer": {
-          "id": 1,
-          "name": "Tiến Đạt"
-        },
-        "dateStart": "14/10/2022",
-        "dateEnd": "23/06/2023",
-        "deposit": "5000",
-        "totalMoney": "30000",
-        "accompaniedFacility": "xe đạp"
-      },
-      {
-        "id": 2,
-        "room": {
-          "id": 1,
-          "name": "Bơi lội"
-        },
-        "customer": {
-          "id": 2,
-          "name": "Sơn"
-        },
-        "dateStart": "14/10/2022",
-        "dateEnd": "23/06/2023",
-        "deposit": "5000",
-        "totalMoney": "30000",
-        "accompaniedFacility": "xe đạp"
-      }
-    ]
-  }
+      "dateStart": "14/10/2022",
+      "dateEnd": "23/06/2023",
+      "deposit": "5000",
+      "totalMoney": "30000",
+      "accompaniedFacility": "xe đạp"
+    }
+  ]
+}

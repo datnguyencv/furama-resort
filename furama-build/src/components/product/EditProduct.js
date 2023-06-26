@@ -13,11 +13,8 @@ export function EditProduct() {
   const param = useParams();
   const [roomTypes, setRoomType] = useState([]);
   const [rentTypes, setRentType] = useState([]);
-  const [product, setProduct] = useState([]);
-  const [type, setType] = useState();
-  const handleTypeChange = (event) => {
-    setType(event);
-  };
+  const [product, setProduct] = useState();
+  
 
   useEffect(() => {
     async function fetchData() {
@@ -27,7 +24,6 @@ export function EditProduct() {
       setRoomType(rs2);
       setRentType(rs1);
       setProduct(result);
-      setType(product?.roomType);
     }
     fetchData();
   }, [param.id]);
@@ -41,7 +37,7 @@ export function EditProduct() {
         area: product?.area,
         cost: product?.cost,
         maxPeople: product?.maxPeople,
-        standard: product?.standard,
+        standardRoom: product?.standardRoom,
         description: product?.description,
         poolArea: product?.poolArea,
         numberOfFloors: product?.numberOfFloors,
@@ -54,18 +50,19 @@ export function EditProduct() {
         area: Yup.number().required("Không được để trống"),
         cost: Yup.number().required("Không được để trống"),
         maxPeople: Yup.number().required("Không được để trống"),
-        standard: Yup.string().required("Không được để trống"),
+        standardRoom: Yup.string().required("Không được để trống"),
         description: Yup.string().required("Không được để trống"),
         poolArea: Yup.number().required("Không được để trống"),
         numberOfFloors: Yup.number().required("Không được để trống"),
-        roomType: Yup.string().required("Không được để trống"),
-        rentType: Yup.string().required("Không được để trống"),
+        roomType: Yup.number().required("Không được để trống"),
+        rentType: Yup.number().required("Không được để trống"),
       })}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values, setSubmitting);
         try {
-          product.roomType = parseInt(product.roomType);
-          product.roomType = type;
+          values.roomType = parseInt(values.roomType);
+          values.rentType = parseInt(values.rentType);
+          values.id = param.id;
           ProductService.update(values);
           setSubmitting(false);
           alert("Thanh cong");
@@ -78,7 +75,7 @@ export function EditProduct() {
       }}
     >
       {({ isSubmitting }) => (
-        <div>
+        <div className="container">
           <div className="p-3">
             <h2 className="text-center fw-bold">Product edit</h2>
             <nav className="navbar navbar-expand-lg py-0 my-0">
@@ -87,6 +84,11 @@ export function EditProduct() {
           </div>
 
           <Form>
+          <Field
+                  type="hidden"
+                  className="form-control"
+                  name="id"
+                />
             <div className="form-group">
               <label htmlFor="name" style={{ fontWeight: "bold" }}>
                 Tên:<span style={{ color: "red" }}>*</span>
@@ -176,21 +178,21 @@ export function EditProduct() {
             </div>
 
             <div className="mt-3 form-group">
-              <label htmlFor="standard" style={{ fontWeight: "bold" }}>
+              <label htmlFor="standardRoom" style={{ fontWeight: "bold" }}>
                 Tiêu chuẩn phòng:<span style={{ color: "red" }}>*</span>
               </label>
               <div className="input-group">
                 <Field
                   type="text"
-                  id="standard"
+                  id="standardRoom"
                   className="form-control"
                   placeholder="Tiêu chuẩn phòng"
-                  name="standard"
+                  name="standardRoom"
                 />
               </div>
               <div>
                 <ErrorMessage
-                  name="standard"
+                  name="standardRoom"
                   component="span"
                   className="form-err text-danger"
                 />
@@ -295,7 +297,7 @@ export function EditProduct() {
                   id="roomType"
                   className="form-control"
                   name="roomType"
-                  onChange={(event) => handleTypeChange(event.target.value)}
+                  // onChange={(event) => handleTypeChange(event.target.value)}
                 >
                   <option value="0">Chọn loại phòng</option>
                   {roomTypes.map((type, index) => (
@@ -324,7 +326,6 @@ export function EditProduct() {
                   id="rentType"
                   className="form-control"
                   name="rentType"
-                  onChange={(event) => handleTypeChange(event.target.value)}
                 >
                   <option value="0">Chọn kiểu thuê</option>
                   {rentTypes.map((type, index) => (
@@ -359,7 +360,7 @@ export function EditProduct() {
               ) : (
                 <>
                   <button type="submit" className="btn btn-sm btn-success">
-                    Thêm mới
+                    Cập nhật
                   </button>
                   <Link to="/product/list" className="btn btn-sm btn-primary">
                     Thoát
