@@ -92,21 +92,12 @@
     },
     {
       "name": "Doremon",
-      "gender": "Nam",
+      "gender": "Nữ",
       "age": "22",
       "phoneNumber": "0919895193",
       "address": "Da Nang",
       "customerTypeId": 2,
       "id": 11
-    },
-    {
-      "name": "Doremon",
-      "gender": "Nam",
-      "age": "22",
-      "phoneNumber": "0979895193",
-      "address": "Da nang",
-      "customerTypeId": 3,
-      "id": 12
     }
   ],
   "customerType": [

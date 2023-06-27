@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import * as ProductService from "../services/product-service/ProductService";
-import * as TypeProduct from "../services/product-service/TypeProduct";
+import * as ProductService from "../../services/product-service/ProductService";
+import * as TypeProduct from "../../services/product-service/TypeProduct";
 import { Button } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
 
@@ -73,7 +73,7 @@ export default function ListProduct() {
                           <span className="icon-long-arrow-right" />
                         </a>
                       </p>
-                      <button className="btn btn-sm btn-primary">
+                      <button className="btn btn-sm btn-primary mr-2">
                         <Link
                           className="icon-edit"
                           style={{ textDecoration: "none", color: "white" }}

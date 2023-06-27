@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ErrorMessage, Field, Formik, Form } from "formik";
 import * as Yup from "yup";
-import * as ProductService from "../services/product-service/ProductService";
-import * as TypeProduct from "../services/product-service/TypeProduct";
+import * as ProductService from "../../services/product-service/ProductService";
+import * as TypeProduct from "../../services/product-service/TypeProduct";
 import { useNavigate, Link } from "react-router-dom";
 
 export function CreateProduct() {
