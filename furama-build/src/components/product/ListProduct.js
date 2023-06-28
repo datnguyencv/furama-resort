@@ -9,6 +9,11 @@ export default function ListProduct() {
   const [products, setProducts] = useState([]);
   const [roomTypes, setRoomType] = useState([]);
   const [rentTypes, setRentType] = useState([]);
+
+    // //Phan Trang
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const itemsPerPage = 6;
+
   useEffect(() => {
     async function fetchData() {
       setRoomType(await TypeProduct.getRoomType());

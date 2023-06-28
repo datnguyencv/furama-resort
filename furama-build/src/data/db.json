@@ -316,6 +316,18 @@
       "deposit": "5000",
       "totalMoney": "30000",
       "accompaniedFacility": "xe đạp"
+    },
+    {
+      "idContract": "1",
+      "customerId": "[]",
+      "productId": "[]",
+      "startDate": "",
+      "endDate": "",
+      "deposit": 1000,
+      "totalMoney": "",
+      "dateStart": "2023-06-22",
+      "dateEnd": "2023-06-29",
+      "id": 3
     }
   ]
 }

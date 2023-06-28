@@ -14,6 +14,8 @@ import ListProduct from "./components/product/ListProduct";
 import CreateCustomer from "./components/customer/CreateCustomer";
 import EditCustomer from "./components/customer/EditCustomer";
 import ListCustomer from "./components/customer/ListCustomer";
+import { CreateContract } from "./components/contract/CreateContract";
+import { ListContract } from "./components/contract/ListContract";
 
 export function App() {
   return (
@@ -34,6 +36,9 @@ export function App() {
         <Route path="/customer/create" element={<CreateCustomer />} />
         <Route path="/customer/edit/:id" element={<EditCustomer />} />
         <Route path="/customer/list" element={<ListCustomer />} />
+
+        <Route path="/contract/create" element={<CreateContract />} />
+        <Route path="/contract/list" element={<ListContract />} />
       </Routes>
       <Footer />
     </BrowserRouter>
