@@ -74,6 +74,7 @@ export function CreateContract() {
                   roomId: +values.roomId,
                 });
                 resetForm();
+                alert("Thêm mới thành công")
                 navigate("/contract/list");
               };
               createContract();

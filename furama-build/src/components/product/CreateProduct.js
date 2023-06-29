@@ -11,10 +11,10 @@ export function CreateProduct() {
   const [typeRent, setTypeRent] = useState();
   const [roomTypes, setRoomType] = useState([]);
   const [rentTypes, setRentType] = useState([]);
-  const handleTypeChange1 = (event) => {
+  const handleTypeRoom = (event) => {
     setTypeRoom(event);
   };
-  const handleTypeChange2 = (event) => {
+  const handleTypeRent = (event) => {
     setTypeRent(event);
   };
   useEffect(() => {
@@ -278,7 +278,7 @@ export function CreateProduct() {
                   <select
                     className="form-control form-control-lg"
                     style={{ borderRadius: 5, width: "94%" }}
-                    onChange={(event) => handleTypeChange1(event.target.value)}
+                    onChange={(event) => handleTypeRoom(event.target.value)}
                   >
                     {roomTypes.map((typeRoom, index) => (
                       <option key={index} value={typeRoom.id}>
@@ -303,7 +303,7 @@ export function CreateProduct() {
                   <select
                     className="form-control form-control-lg"
                     style={{ borderRadius: 5, width: "94%" }}
-                    onChange={(event) => handleTypeChange2(event.target.value)}
+                    onChange={(event) => handleTypeRent(event.target.value)}
                   >
                     {rentTypes.map((typeRent, index) => (
                       <option key={index} value={typeRent.id}>

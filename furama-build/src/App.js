@@ -16,6 +16,7 @@ import EditCustomer from "./components/customer/EditCustomer";
 import ListCustomer from "./components/customer/ListCustomer";
 import { CreateContract } from "./components/contract/CreateContract";
 import { ListContract } from "./components/contract/ListContract";
+import { ProductDetail } from "./components/product/ProductDetail";
 
 export function App() {
   return (
@@ -31,6 +32,7 @@ export function App() {
 
         <Route path="/product/create" element={<CreateProduct />} />
         <Route path="/product/edit/:id" element={<EditProduct />} />
+        <Route path="/product/detail/:id" element={<ProductDetail />} />
         <Route path="/product/list" element={<ListProduct />} />
 
         <Route path="/customer/create" element={<CreateCustomer />} />

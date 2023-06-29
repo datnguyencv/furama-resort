@@ -362,8 +362,8 @@ export function EditProduct() {
                   <button type="submit" className="btn btn-sm btn-success">
                     Cập nhật
                   </button>
-                  <Link to="/product/list" className="btn btn-sm btn-primary">
-                    Thoát
+                  <Link to="/product/list" className="btn btn-sm btn-primary ml-3">
+                    Quay lại
                   </Link>
                 </>
               )}

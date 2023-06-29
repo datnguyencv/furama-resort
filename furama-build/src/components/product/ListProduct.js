@@ -71,7 +71,7 @@ export default function ListProduct() {
                 <div key={temp} className="col-sm col-md-6 col-lg-4">
                   <div className="room">
                     <a
-                      href="rooms.html"
+                    href={`/product/detail/${roomIs.id}`}
                       className="img d-flex justify-content-center align-items-center"
                       style={{
                         backgroundImage: `url(${process.env.PUBLIC_URL}/images/room-1.jpg)`,
@@ -83,7 +83,7 @@ export default function ListProduct() {
                     </a>
                     <div className="text p-3 text-center">
                       <h3 className="mb-3">
-                        <a href="rooms.html">{roomIs.name}</a>
+                        <a href= {`/product/detail/${roomIs.id}`}>{roomIs.name}</a>
                       </h3>
                       <p>
                         <span className="price mr-2">{roomIs.cost}</span>{" "}
@@ -97,8 +97,8 @@ export default function ListProduct() {
                       </p>
                       <hr />
                       <p className="pt-1">
-                        <a href="/" className="btn-custom">
-                          View Room Details{" "}
+                        <a href={`/product/detail/${roomIs.id}`} className="btn-custom">
+                          View Room Details
                           <span className="icon-long-arrow-right" />
                         </a>
                       </p>
@@ -130,7 +130,7 @@ export default function ListProduct() {
       </Link>
       <table
         id="productTable"
-        className="table table-light table-striped table-bordered"
+        className="table table-light table-striped table-bordered table-responsive"
       >
         <thead>
           <tr>

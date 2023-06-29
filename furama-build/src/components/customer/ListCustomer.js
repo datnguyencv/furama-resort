@@ -47,6 +47,7 @@ export function ListCustomer() {
 
   return (
     <>
+    <div className="container">
       <center>
         <div>
           <h1 className="text-center fw-bold">Customer List</h1>
@@ -213,6 +214,7 @@ export function ListCustomer() {
           </li>
         </ul>
       </nav>
+      </div>
     </>
   );
 }

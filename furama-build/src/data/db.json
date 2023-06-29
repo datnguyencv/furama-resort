@@ -1,17 +1,17 @@
 {
   "customers": [
     {
-      "id": 1,
       "name": "Tiến Đạt",
       "gender": "Nam",
       "age": 18,
       "phoneNumber": "0702712217",
       "address": "99 Bạch ĐằNg",
-      "customerTypeId": 1
+      "customerTypeId": 3,
+      "id": 1
     },
     {
       "id": 2,
-      "name": "Minh Thông",
+      "name": "Minh Sơn",
       "gender": "Nam",
       "age": "20",
       "phoneNumber": "0987987987",
@@ -28,7 +28,7 @@
       "id": 3
     },
     {
-      "name": "Tiến Hưng",
+      "name": "Hữu Huy",
       "gender": "Nam",
       "age": "25",
       "phoneNumber": "0989999999",
@@ -64,7 +64,7 @@
       "id": 7
     },
     {
-      "name": "Minh Thông",
+      "name": "Minh Sơn",
       "gender": "Nữ",
       "age": "25",
       "phoneNumber": "0919895193",
@@ -125,19 +125,18 @@
   ],
   "room": [
     {
-      "id": 1,
       "name": "Bơi lội",
       "area": 100,
       "cost": 5000,
       "maxPeople": 20,
-      "roomType": 2,
-      "rentType": 1,
       "standardRoom": "Twin bedroom",
       "description": "Tốt",
       "poolArea": 50,
       "numberOfFloors": 3,
       "roomFree": "Đồ bơi, Kính bơi",
-      "status": false
+      "rentType": 1,
+      "roomType": 3,
+      "id": 1
     },
     {
       "id": 2,
@@ -341,6 +340,16 @@
       "deposit": 2000,
       "totalMoney": "2000",
       "id": 12
+    },
+    {
+      "code": "CO-004",
+      "customerId": 8,
+      "roomId": 8,
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
+      "deposit": 500,
+      "totalMoney": "2000",
+      "id": 13
     }
   ]
 }
