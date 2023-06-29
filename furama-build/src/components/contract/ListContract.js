@@ -1,6 +1,24 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import * as contractService from "../../services/contract-service/ContractService";
+import * as productService from "../../services/product-service/ProductService";
+import * as customerService from "../../services/customer-service/CustomerService";
 
 export function ListContract() {
+  const [contractList, setContractList] = useState([]);
+  const [productList, setProductList] = useState([]);
+  const [customerList, setCustomerList] = useState([]);
+  useEffect(() => {
+    const fetchApi = async () => {
+      const result1 = await contractService.findAllContract();
+      const result2 = await productService.findAll();
+      const result3 = await customerService.findAll();
+      setContractList(result1); console.log(result1);
+      setCustomerList(result3);console.log(result2);
+      setProductList(result2);console.log(result3);
+    };
+    fetchApi();
+  }, []);
   return (
     <>
       <section className="ftco-section ftc-no-pb ftc-no-pt">
@@ -34,6 +52,8 @@ export function ListContract() {
                 <tr>
                   <th>STT</th>
                   <th>Mã hợp đồng</th>
+                  <th>Tên Khách hàng</th>
+                  <th>Tên Dịch vụ</th>
                   <th>Ngày bắt đầu</th>
                   <th>Ngày kết thúc</th>
                   <th>Số tiền cọc trước</th>
@@ -43,18 +63,34 @@ export function ListContract() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>SV-0001</td>
-                  <td>06/07/2023</td>
-                  <td>22/07/2023</td>
-                  <td>100.000.000</td>
-                  <td>1.000.000.000</td>
+                {contractList.map((contract, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{contract.code}</td>
+                    <td>
+                      {
+                        customerList.find(
+                          (customer) => contract.customerId === customer.id
+                        )?.name
+                      }
+                    </td>
+                    <td>
+                      {
+                        productList.find(
+                          (product) => product.id === contract.roomId
+                        )?.name
+                      }
+                    </td>
+                    <td>{contract.dateStart}</td>
+                    <td>{contract.dateEnd}</td>
+                    <td>{contract.deposit}</td>
+                    <td>{contract.totalMoney}</td>
 
-                  <td>
-                    <button className="btn btn-danger btn-sm">Xóa</button>
-                  </td>
-                </tr>
+                    <td>
+                      <button className="btn btn-danger btn-sm">Xóa</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             {/*Phân trang*/}

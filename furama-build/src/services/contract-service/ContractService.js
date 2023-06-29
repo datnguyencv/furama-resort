@@ -10,7 +10,7 @@ export const findAllContract = async () => {
 }
 export const saveContract = async (values) => {
     try {
-        await axios.post(`http://localhost:8080/contract`, values);
+        await axios.post(`http://localhost:8080/contract`, {...values});
     } catch (error) {
         console.log(error)
     }

@@ -98,6 +98,15 @@
       "address": "Da Nang",
       "customerTypeId": 2,
       "id": 11
+    },
+    {
+      "name": "Phạm Sơn",
+      "gender": "Nam",
+      "age": "22",
+      "phoneNumber": "0919805193",
+      "address": "Đà Nẵng",
+      "customerTypeId": 3,
+      "id": 12
     }
   ],
   "customerType": [
@@ -119,7 +128,7 @@
       "id": 1,
       "name": "Bơi lội",
       "area": 100,
-      "cost": 50,
+      "cost": 5000,
       "maxPeople": 20,
       "roomType": 2,
       "rentType": 1,
@@ -134,7 +143,7 @@
       "id": 2,
       "name": "Phòng đơn",
       "area": 50,
-      "cost": 30,
+      "cost": 3000,
       "maxPeople": 1,
       "roomType": 1,
       "rentType": 1,
@@ -149,7 +158,7 @@
       "id": 3,
       "name": "Bơi lội",
       "area": 100,
-      "cost": 50,
+      "cost": 5000,
       "maxPeople": 20,
       "roomType": 2,
       "rentType": 1,
@@ -164,7 +173,7 @@
       "id": 4,
       "name": "Bơi lội",
       "area": 100,
-      "cost": 50,
+      "cost": 5000,
       "maxPeople": 20,
       "roomType": 2,
       "rentType": 1,
@@ -178,7 +187,7 @@
     {
       "name": "Doremon",
       "area": 12,
-      "cost": 3,
+      "cost": 3000,
       "maxPeople": 3,
       "standardRoom": "Twin bedroom",
       "description": "3",
@@ -192,7 +201,7 @@
     {
       "name": "Doremon Ab",
       "area": 2,
-      "cost": 2,
+      "cost": 2000,
       "maxPeople": 2,
       "standardRoom": "Single room",
       "description": "2",
@@ -248,7 +257,7 @@
     {
       "name": "123",
       "area": 123,
-      "cost": 123,
+      "cost": 1230,
       "maxPeople": 12,
       "standardRoom": "123",
       "description": "123",
@@ -287,46 +296,34 @@
   "contract": [
     {
       "id": 1,
-      "room": {
-        "id": 1,
-        "name": "Bơi lội"
-      },
-      "customer": {
-        "id": 1,
-        "name": "Tiến Đạt"
-      },
+      "code": "CO-0001",
+      "roomId": 1,
+      "customerId": 1,
       "dateStart": "14/10/2022",
       "dateEnd": "23/06/2023",
-      "deposit": "5000",
-      "totalMoney": "30000",
+      "deposit": 5000,
+      "totalMoney": 30000,
       "accompaniedFacility": "xe đạp"
     },
     {
       "id": 2,
-      "room": {
-        "id": 1,
-        "name": "Bơi lội"
-      },
-      "customer": {
-        "id": 2,
-        "name": "Sơn"
-      },
+      "code": "CO-0002",
+      "roomId": 1,
+      "customerId": 2,
       "dateStart": "14/10/2022",
       "dateEnd": "23/06/2023",
-      "deposit": "5000",
-      "totalMoney": "30000",
+      "deposit": 5000,
+      "totalMoney": 30000,
       "accompaniedFacility": "xe đạp"
     },
     {
-      "idContract": "1",
+      "idContract": "0001",
       "customerId": "[]",
       "productId": "[]",
-      "startDate": "",
-      "endDate": "",
-      "deposit": 1000,
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
+      "deposit": 500,
       "totalMoney": "",
-      "dateStart": "2023-06-22",
-      "dateEnd": "2023-06-29",
       "id": 3
     }
   ]

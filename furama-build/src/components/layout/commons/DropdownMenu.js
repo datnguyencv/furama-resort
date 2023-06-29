@@ -11,7 +11,6 @@ export function DropdownMenu() {
       <NavDropdown.Item as={NavLink} to="/product/list">List Product</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item as={NavLink} to="/contract/create">Create Contract</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/contract/edit/:id">Edit Contract</NavDropdown.Item>
       <NavDropdown.Item as={NavLink} to="/contract/list">Contract List</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item as={NavLink} to="/customer/create">Create Customer</NavDropdown.Item>
