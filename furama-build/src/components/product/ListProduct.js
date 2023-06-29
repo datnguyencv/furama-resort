@@ -9,10 +9,12 @@ export default function ListProduct() {
   const [products, setProducts] = useState([]);
   const [roomTypes, setRoomType] = useState([]);
   const [rentTypes, setRentType] = useState([]);
+  const [productById, setProductById] = useState([]);
 
-    // //Phan Trang
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const itemsPerPage = 6;
+
+    //Phan Trang
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
 
   useEffect(() => {
     async function fetchData() {
@@ -22,15 +24,37 @@ export default function ListProduct() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      let result = await ProductService.findAll();
-      setProducts(result);
-      console.log(result);
-    };
+  const fetchProducts = async () => {
+    let result = await ProductService.findAll();
+    setProducts(result);
+    console.log(result);
+  };
 
+  useEffect(() => {
     fetchProducts();
   }, []);
+
+  //Delete
+  const handleDelete = async () => {
+    await ProductService.remove(productById?.id);
+    fetchProducts();
+  };
+  const getData = async (id) => {
+    const data = await ProductService.findById(id);
+    setProductById(data);
+  };
+
+  //Phan Trang
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = products.slice(startIndex, endIndex);
+
   return (
     <>
       <>
@@ -43,7 +67,7 @@ export default function ListProduct() {
             </div>
 
             <div className="row">
-              {products.map((roomIs, temp) => (
+              {currentProducts.map((roomIs, temp) => (
                 <div key={temp} className="col-sm col-md-6 col-lg-4">
                   <div className="room">
                     <a
@@ -85,7 +109,10 @@ export default function ListProduct() {
                           to={`/product/edit/${roomIs.id}`}
                         ></Link>
                       </button>
-                      <Button className="btn btn-sm btn-danger icon-delete"></Button>
+                      <Button className="btn btn-sm btn-danger icon-delete"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      onClick={() => getData(roomIs.id)}></Button>
                     </div>
                   </div>
                 </div>
@@ -94,6 +121,7 @@ export default function ListProduct() {
           </div>
         </section>
       </>
+      <div className = "container">
       <center>
         <h1 className="text-center fw-bold">Product List</h1>
       </center>
@@ -123,7 +151,7 @@ export default function ListProduct() {
           </tr>
         </thead>
         <tbody align="center">
-          {products.map((value, index) => (
+          {currentProducts.map((value, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{value.name}</td>
@@ -154,22 +182,76 @@ export default function ListProduct() {
                 </button>
               </td>
               <td>
-                <Button className="icon-delete btn-danger"></Button>
+                <Button className="icon-delete btn-danger"
+                onClick={() => getData(value.id)}
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"></Button>
+            
+              <div
+                className="modal fade"
+                id="exampleModal"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5
+                        className="modal-title"
+                        id="exampleModalLabel"
+                      >
+                        Delete action ~!
+                      </h5>
+                    </div>
+                    <div className="modal-body">
+                      <span>Bạn có muốn xóa sản phẩm </span>
+                      <span className="err">
+                        {" "}
+                        {productById?.name}{" "}
+                      </span>
+                      <span>không?</span>
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Huỷ
+                      </button>
+                      <button
+                        onClick={() => handleDelete()}
+                        type="button"
+                        className="btn btn-primary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Xóa
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {/*Phân trang*/}
+      </div>
+      {/* Pagination */}
       <nav
         className="d-flex justify-content-center"
         aria-label="Page navigation example"
       >
         <ul className="pagination">
-          <li className="page-item mr-2">
-            <a
-              className="page-link"
-              href="/#"
+          <li
+            className={`page-item ${currentPage === 1 ? "d-none" : ""}`}
+            onClick={() =>
+              currentPage !== 1 && handlePageChange(currentPage - 1)
+            }
+          >
+            <button
+              className="page-link mr-2"
               style={{
                 border: "none",
                 backgroundColor: "#daeae9",
@@ -177,51 +259,36 @@ export default function ListProduct() {
               }}
             >
               Trước
-            </a>
+            </button>
           </li>
-          <li className="page-item mr-3">
-            <a
-              className="page-link"
-              href="/#"
-              style={{
-                border: "none",
-                backgroundColor: "#daeae9",
-                color: "#1d1d1c",
-              }}
+          {Array.from({ length: totalPages }, (_, i) => (
+            <li
+              key={i}
+              className={`page-item ${i + 1 === currentPage ? "active" : ""}`}
+              onClick={() => handlePageChange(i + 1)}
             >
-              1
-            </a>
-          </li>
-          <li className="page-item mr-3">
-            <a
+              <button
+                className="page-link mr-3"
+                style={{
+                  border: "none",
+                  backgroundColor: "#daeae9",
+                  color: "#1d1d1c",
+                }}
+              >
+                {i + 1}
+              </button>
+            </li>
+          ))}
+          <li
+            className={`page-item ${
+              currentPage === totalPages ? "d-none" : ""
+            }`}
+            onClick={() =>
+              currentPage !== totalPages && handlePageChange(currentPage + 1)
+            }
+          >
+            <button
               className="page-link"
-              href="/#"
-              style={{
-                border: "none",
-                backgroundColor: "#daeae9",
-                color: "#1d1d1c",
-              }}
-            >
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a
-              className="page-link"
-              href="/#"
-              style={{
-                border: "none",
-                backgroundColor: "#daeae9",
-                color: "#1d1d1c",
-              }}
-            >
-              3
-            </a>
-          </li>
-          <li className="page-item ml-2">
-            <a
-              className="page-link"
-              href="/#"
               style={{
                 border: "none",
                 backgroundColor: "#daeae9",
@@ -229,7 +296,7 @@ export default function ListProduct() {
               }}
             >
               Sau
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

@@ -314,13 +314,13 @@ export function CreateProduct() {
                 )}
               />
             </div>
-            <div className="">
+            <div className="m-3">
               <>
-                <button type="submit" className="btn btn-primary btn-sm">
+                <button type="submit" className="btn btn-primary btn-sm mr-3">
                   Thêm
                 </button>
                 <Link to="/product/list" className="btn btn-primary btn-sm">
-                  Thoát
+                  Quay lại
                 </Link>
               </>
             </div>

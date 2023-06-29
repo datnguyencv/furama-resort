@@ -24,10 +24,10 @@ export function ListCustomer() {
     getCustomerType();
   }, []);
 
+  //Delete
   const handleDelete = async () => {
     await customerService.remove(customerById?.id);
-    let result = await customerService.findAll();
-    setCustomers(result);
+    getCustomer();
   };
   const getData = async (id) => {
     const data = await customerService.customerById(id);
@@ -158,13 +158,13 @@ export function ListCustomer() {
       >
         <ul className="pagination">
           <li
-            className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+            className={`page-item ${currentPage === 1 ? "d-none" : ""}`}
             onClick={() =>
               currentPage !== 1 && handlePageChange(currentPage - 1)
             }
           >
             <button
-              className="page-link"
+              className="page-link mr-2"
               style={{
                 border: "none",
                 backgroundColor: "#daeae9",
@@ -181,7 +181,7 @@ export function ListCustomer() {
               onClick={() => handlePageChange(i + 1)}
             >
               <button
-                className="page-link"
+                className="page-link mr-3"
                 style={{
                   border: "none",
                   backgroundColor: "#daeae9",
@@ -194,7 +194,7 @@ export function ListCustomer() {
           ))}
           <li
             className={`page-item ${
-              currentPage === totalPages ? "disabled" : ""
+              currentPage === totalPages ? "d-none" : ""
             }`}
             onClick={() =>
               currentPage !== totalPages && handlePageChange(currentPage + 1)

@@ -7,6 +7,13 @@ export const findAll = async () => {
   } catch (err) {}
 };
 
+export const findById = async (id) => {
+  try {
+    let rs = await axios.get(`http://localhost:8080/room/${id}`);
+    return rs.data;
+  } catch (err) {}
+};
+
 export const findId = async (id) => {
   try {
     const result = await axios.get(`http://localhost:8080/room/${id}`);

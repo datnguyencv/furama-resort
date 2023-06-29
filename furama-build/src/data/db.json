@@ -253,20 +253,6 @@
       "rentType": 1,
       "roomType": 1,
       "id": 9
-    },
-    {
-      "name": "123",
-      "area": 123,
-      "cost": 1230,
-      "maxPeople": 12,
-      "standardRoom": "123",
-      "description": "123",
-      "poolArea": 123,
-      "numberOfFloors": 12,
-      "roomFree": "123",
-      "rentType": 1,
-      "roomType": 3,
-      "id": 10
     }
   ],
   "roomType": [
@@ -317,14 +303,44 @@
       "accompaniedFacility": "xe đạp"
     },
     {
-      "idContract": "0001",
-      "customerId": "[]",
-      "productId": "[]",
+      "code": "0001",
+      "customerId": 1,
+      "roomId": 2,
       "dateStart": "2023-06-30",
       "dateEnd": "2023-06-30",
       "deposit": 500,
-      "totalMoney": "",
+      "totalMoney": 30000,
       "id": 3
+    },
+    {
+      "code": "CO-003",
+      "customerId": 6,
+      "roomId": 8,
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
+      "deposit": 2000,
+      "totalMoney": "",
+      "id": 7
+    },
+    {
+      "code": "CO-332",
+      "customerId": 2,
+      "roomId": 9,
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
+      "deposit": 2000,
+      "totalMoney": "",
+      "id": 9
+    },
+    {
+      "code": "CO-004",
+      "customerId": 6,
+      "roomId": 2,
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
+      "deposit": 2000,
+      "totalMoney": "2000",
+      "id": 12
     }
   ]
 }
