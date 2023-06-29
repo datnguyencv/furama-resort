@@ -46,16 +46,20 @@ export function EditProduct() {
         roomType: product?.roomType,
       }}
       validationSchema={Yup.object({
-        name: Yup.string().required("Không được để trống"),
-        area: Yup.number().required("Không được để trống"),
-        cost: Yup.number().required("Không được để trống"),
-        maxPeople: Yup.number().required("Không được để trống"),
+        name: Yup.string().required("Không được để trống")
+        .matches(/\D+/, 'Tên phải đúng theo định dạng không có số'),
+        area: Yup.number().required("Không được để trống")
+        .positive('Diện tích sử dụng phải là số dương'),
+        cost: Yup.number().required("Không được để trống")
+        .positive('Giá phải là số dương'),
+        maxPeople: Yup.number().required("Không được để trống")
+        .positive('Phải là số dương'),
         standardRoom: Yup.string().required("Không được để trống"),
         description: Yup.string().required("Không được để trống"),
-        poolArea: Yup.number().required("Không được để trống"),
-        numberOfFloors: Yup.number().required("Không được để trống"),
-        roomType: Yup.number().required("Không được để trống"),
-        rentType: Yup.number().required("Không được để trống"),
+        poolArea: Yup.number().required("Không được để trống")
+        .positive('Diện tích hồ bơi phải là số dương'),
+        numberOfFloors: Yup.number().required("Không được để trống")
+        .positive('Số tầng phải là số dương'),
       })}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values, setSubmitting);

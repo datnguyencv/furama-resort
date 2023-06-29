@@ -34,8 +34,10 @@ function CreateCustomer() {
         validationSchema={Yup.object({
           name: Yup.string()
             .required("Không được để trống")
-            .min(2, "độ dài ký tự phải từ 2 trở lên"),
-          age: Yup.number().required("Không được để trống"),
+            .min(2, "độ dài ký tự phải từ 2 trở lên")
+            .matches(/^[A-Z][a-z]*( [A-Z][a-z]*)*$/, 'Tên phải đúng theo định dạng không có số, các ký tự đàu tiên của mỗi từ phải viết hoa'),
+          age: Yup.number().required("Không được để trống")
+          .min('Tuổi phải lớn hơn 18'),
           phoneNumber: Yup.string()
             .required("Không được để trống")
             .min(10, "số điện thoại phải dài ít nhất 10 số và nhiều nhất 12 số")
