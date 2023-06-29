@@ -287,8 +287,7 @@
       "dateStart": "14/10/2022",
       "dateEnd": "23/06/2023",
       "deposit": 5000,
-      "totalMoney": 30000,
-      "accompaniedFacility": "xe đạp"
+      "totalMoney": 30000
     },
     {
       "id": 2,
@@ -298,8 +297,7 @@
       "dateStart": "14/10/2022",
       "dateEnd": "23/06/2023",
       "deposit": 5000,
-      "totalMoney": 30000,
-      "accompaniedFacility": "xe đạp"
+      "totalMoney": 30000
     },
     {
       "code": "0001",

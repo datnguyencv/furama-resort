@@ -10,7 +10,8 @@ function CreateCustomer() {
   const [type, setType] = useState();
   const [typeCustomerList, setTypeCustomerList] = useState([]);
   const handleTypeChange = (event) => {
-    setType(event);console.log(event, type);
+    setType(event);
+    console.log(event, type);
   };
   useEffect(() => {
     const fetchApi = async () => {
@@ -35,9 +36,13 @@ function CreateCustomer() {
           name: Yup.string()
             .required("Không được để trống")
             .min(2, "độ dài ký tự phải từ 2 trở lên")
-            .matches(/^[A-Z][a-z]*( [A-Z][a-z]*)*$/, 'Tên phải đúng theo định dạng không có số, các ký tự đàu tiên của mỗi từ phải viết hoa'),
-          age: Yup.number().required("Không được để trống")
-          .min('Tuổi phải lớn hơn 18'),
+            .matches(
+              /^[A-Z][a-z]*( [A-Z][a-z]*)*$/,
+              "Tên phải đúng theo định dạng không có số, các ký tự đàu tiên của mỗi từ phải viết hoa"
+            ),
+          age: Yup.number()
+            .required("Không được để trống")
+            .min("Tuổi phải lớn hơn 18"),
           phoneNumber: Yup.string()
             .required("Không được để trống")
             .min(10, "số điện thoại phải dài ít nhất 10 số và nhiều nhất 12 số")
@@ -59,7 +64,9 @@ function CreateCustomer() {
       >
         <Form>
           <center>
-            <h1 className="text-center fw-bold" style={{textAlign: "center"}}>Create Customer</h1>
+            <h1 className="text-center fw-bold" style={{ textAlign: "center" }}>
+              Create Customer
+            </h1>
           </center>
           <div className="mb-3">
             <label htmlFor="name">
