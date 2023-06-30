@@ -6,7 +6,7 @@ import * as customerService from "../../services/customer-service/CustomerServic
 import * as contractService from "../../services/contract-service/ContractService";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export function CreateContract() {
