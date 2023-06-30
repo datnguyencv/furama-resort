@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,6 +58,7 @@ function CreateCustomer() {
             values.customerTypeId = parseInt(type);
             await customerService.createCustomer(values);
             resetForm();
+            toast("Create successful")
             navigate("/customer/list");
           };
           createCus();
@@ -171,6 +173,7 @@ function CreateCustomer() {
           </div>
         </Form>
       </Formik>
+      <ToastContainer />;
     </>
   );
 }

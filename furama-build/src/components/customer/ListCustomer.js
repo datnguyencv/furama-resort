@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as customerService from "../../services/customer-service/CustomerService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function ListCustomer() {
   const [customers, setCustomers] = useState([]);
@@ -27,6 +29,7 @@ export function ListCustomer() {
   //Delete
   const handleDelete = async () => {
     await customerService.remove(customerById?.id);
+    toast('Delete successful')
     getCustomer();
   };
   const getData = async (id) => {
@@ -215,6 +218,7 @@ export function ListCustomer() {
         </ul>
       </nav>
       </div>
+      <ToastContainer />;
     </>
   );
 }

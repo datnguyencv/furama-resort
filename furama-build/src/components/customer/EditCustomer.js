@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import * as customerService from "../../services/customer-service/CustomerService";
@@ -56,7 +57,7 @@ function EditCustomer() {
           const updateCus = async () => {
             values.customerTypeId = parseInt(type);
             await customerService.updateCustomer(customer.id, values);
-            alert("Updated thanh cong");
+            toast("Updated successful");
             resetForm();
             navigate("/customer/list");
           };
@@ -72,7 +73,7 @@ function EditCustomer() {
             </h1>
           </center>
           <div className="mb-3">
-            <label htmlfor="name">
+            <label htmlFor="name">
               Name: <span>*</span>
             </label>
             <Field type="text" className="form-control" id="name" name="name" />
