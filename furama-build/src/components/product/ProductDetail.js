@@ -8,7 +8,7 @@ export function ProductDetail() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await ProductService.findId(param.id);
+      const result = await ProductService.findById(param.id);
       setProduct(result);
       console.log(result);
     }
@@ -24,7 +24,7 @@ export function ProductDetail() {
         <h1 className="m-3">Room Detail</h1>
       </center>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-4">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Room Information</h5>
@@ -43,14 +43,14 @@ export function ProductDetail() {
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                   <i className="bi bi-card-checklist"></i>
-                  Standard Room: {product.standardRoom}
+                  Standard Room:<br/> {product.standardRoom}
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                   <i className="bi bi-info-circle"></i>
-                  Description: {product.description}
+                  Description:<br/> {product.description}
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center">
-                  <i className="bi bi-pool"></i>
+                  <i className="bi bi-water"></i>
                   Pool Area: {product.poolArea} sqm
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -77,7 +77,7 @@ export function ProductDetail() {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-8">
           <div
             id="carouselExampleIndicators"
             className="carousel slide"
@@ -92,6 +92,15 @@ export function ProductDetail() {
           </div>
           <div className="carousel-item">
             <img src={process.env.PUBLIC_URL + '/images/room-3.jpg'} className="d-block w-100" alt="Room 3" />
+          </div>
+          <div className="carousel-item">
+            <img src={process.env.PUBLIC_URL + '/images/room-4.jpg'} className="d-block w-100" alt="Room 4" />
+          </div>
+          <div className="carousel-item">
+            <img src={process.env.PUBLIC_URL + '/images/room-5.jpg'} className="d-block w-100" alt="Room 5" />
+          </div>
+          <div className="carousel-item">
+            <img src={process.env.PUBLIC_URL + '/images/room-6.jpg'} className="d-block w-100" alt="Room 6" />
           </div>
             </div>
             <button

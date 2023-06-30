@@ -3,10 +3,11 @@ import { Facility } from "./facility";
 
 export interface Contract {
     code: string;
-    customerId: Customer;
-    roomId: Facility;
+    customerId: number;
+    roomId: number;
     dateStart: string;
     dateEnd: string;
     deposit: number;
     id: number;
+    totalMoney: number;
   }

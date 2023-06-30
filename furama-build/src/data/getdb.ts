@@ -1,6 +1,5 @@
 import { Contract } from './contract';
 import { Customer } from './customer';
-import { customers, room, contract } from './db.json';
 import { Facility } from './facility';
 
 // Đọc dữ liệu từ tệp JSON

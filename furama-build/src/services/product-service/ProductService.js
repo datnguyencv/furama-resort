@@ -2,30 +2,28 @@ import axios from "axios";
 
 export const findAll = async () => {
   try {
-    let rs = await axios.get(`http://localhost:8080/room`);
+    let rs = await axios.get(`http://localhost:8080/room?_sort=id&_order=desc`);
     return rs.data;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const findById = async (id) => {
   try {
     let rs = await axios.get(`http://localhost:8080/room/${id}`);
     return rs.data;
-  } catch (err) {}
-};
-
-export const findId = async (id) => {
-  try {
-    const result = await axios.get(`http://localhost:8080/room/${id}`);
-    return result.data;
   } catch (err) {
     console.log(err);
   }
 };
 
-export const findName = async (name) => {
+export const findNameAndRoomType = async (name, id) => {
   try {
-    return await axios.get(`http://localhost:8080/room?name_like${name}`);
+    let rs = await axios.get(
+      `http://localhost:8080/room?name_like=${name}&roomType_like=${id}`
+    );
+    return rs.data;
   } catch (err) {
     console.log(err);
   }

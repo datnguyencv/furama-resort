@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import * as contractService from "../../services/contract-service/ContractService";
 import * as productService from "../../services/product-service/ProductService";
 import * as customerService from "../../services/customer-service/CustomerService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function ListContract() {
   const [contractList, setContractList] = useState([]);
@@ -28,6 +30,7 @@ export function ListContract() {
 
   const handleDelete = async () => {
     await contractService.remove(contractById?.id);
+    toast("Delete successful")
     fetchApi();
   };
   const getData = async (id) => {
@@ -241,6 +244,7 @@ export function ListContract() {
           </div>
         </div>
       </section>
+      <ToastContainer />;
     </>
   );
 }

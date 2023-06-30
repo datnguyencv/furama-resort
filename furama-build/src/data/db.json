@@ -13,7 +13,7 @@
       "id": 2,
       "name": "Minh Sơn",
       "gender": "Nam",
-      "age": "20",
+      "age": 20,
       "phoneNumber": "0987987987",
       "address": "99 Bạch Đằng",
       "customerTypeId": 2
@@ -21,7 +21,7 @@
     {
       "name": "Văn Trí",
       "gender": "Nam",
-      "age": "18",
+      "age": 18,
       "phoneNumber": "077788888",
       "address": "01 Trần Hưng Đạo",
       "customerTypeId": 2,
@@ -30,7 +30,7 @@
     {
       "name": "Hữu Huy",
       "gender": "Nam",
-      "age": "25",
+      "age": 25,
       "phoneNumber": "0989999999",
       "address": "02 Trần Hưng Đạo",
       "customerTypeId": 3,
@@ -39,7 +39,7 @@
     {
       "name": "Minh Sơn",
       "gender": "Nam",
-      "age": "26",
+      "age": 26,
       "phoneNumber": "0123456789",
       "address": "295 Trần Hưng Đạo",
       "customerTypeId": 1,
@@ -48,7 +48,7 @@
     {
       "name": "Doremon",
       "gender": "Nam",
-      "age": "22",
+      "age": 22,
       "phoneNumber": "0919895195",
       "address": "Da nang",
       "customerTypeId": 3,
@@ -57,7 +57,7 @@
     {
       "name": "Doremon Ab",
       "gender": "Nam",
-      "age": "22",
+      "age": 22,
       "phoneNumber": "0919895195",
       "address": "Da nang",
       "customerTypeId": 2,
@@ -66,7 +66,7 @@
     {
       "name": "Minh Sơn",
       "gender": "Nữ",
-      "age": "25",
+      "age": 25,
       "phoneNumber": "0919895193",
       "address": "Da Nang",
       "customerTypeId": 2,
@@ -75,7 +75,7 @@
     {
       "name": "Doremon Ab",
       "gender": "Nam",
-      "age": "22",
+      "age": 22,
       "phoneNumber": "0919895192",
       "address": "Da nang",
       "customerTypeId": 2,
@@ -84,7 +84,7 @@
     {
       "name": "Doremon Ab",
       "gender": "Nữ",
-      "age": "23",
+      "age": 23,
       "phoneNumber": "0919895193",
       "address": "Da nang",
       "customerTypeId": 2,
@@ -93,7 +93,7 @@
     {
       "name": "Doremon",
       "gender": "Nữ",
-      "age": "22",
+      "age": 22,
       "phoneNumber": "0919895193",
       "address": "Da Nang",
       "customerTypeId": 2,
@@ -102,7 +102,7 @@
     {
       "name": "Phạm Sơn",
       "gender": "Nam",
-      "age": "22",
+      "age": 22,
       "phoneNumber": "0919805193",
       "address": "Đà Nẵng",
       "customerTypeId": 3,
@@ -194,7 +194,7 @@
       "numberOfFloors": 3,
       "roomFree": "3",
       "rentType": 1,
-      "roomType": 1,
+      "roomType": 3,
       "id": 5
     },
     {
@@ -252,6 +252,20 @@
       "rentType": 1,
       "roomType": 1,
       "id": 9
+    },
+    {
+      "name": "Phòng view biển",
+      "area": 500,
+      "cost": 5000,
+      "maxPeople": 12,
+      "standardRoom": "Twin bedroom",
+      "description": "Phòng hướng biển, dịch vụ cao cấp",
+      "poolArea": 100,
+      "numberOfFloors": 2,
+      "roomFree": "Đồ ăn sáng",
+      "rentType": 2,
+      "roomType": 2,
+      "id": 10
     }
   ],
   "roomType": [
@@ -284,8 +298,8 @@
       "code": "CO-0001",
       "roomId": 1,
       "customerId": 1,
-      "dateStart": "14/10/2022",
-      "dateEnd": "23/06/2023",
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
       "deposit": 5000,
       "totalMoney": 30000
     },
@@ -294,8 +308,8 @@
       "code": "CO-0002",
       "roomId": 1,
       "customerId": 2,
-      "dateStart": "14/10/2022",
-      "dateEnd": "23/06/2023",
+      "dateStart": "2023-06-30",
+      "dateEnd": "2023-06-30",
       "deposit": 5000,
       "totalMoney": 30000
     },
@@ -316,7 +330,7 @@
       "dateStart": "2023-06-30",
       "dateEnd": "2023-06-30",
       "deposit": 2000,
-      "totalMoney": "",
+      "totalMoney": 3400,
       "id": 7
     },
     {
@@ -326,7 +340,7 @@
       "dateStart": "2023-06-30",
       "dateEnd": "2023-06-30",
       "deposit": 2000,
-      "totalMoney": "",
+      "totalMoney": 4000,
       "id": 9
     },
     {
@@ -336,7 +350,7 @@
       "dateStart": "2023-06-30",
       "dateEnd": "2023-06-30",
       "deposit": 2000,
-      "totalMoney": "2000",
+      "totalMoney": 2000,
       "id": 12
     },
     {
@@ -346,7 +360,7 @@
       "dateStart": "2023-06-30",
       "dateEnd": "2023-06-30",
       "deposit": 500,
-      "totalMoney": "2000",
+      "totalMoney": 2000,
       "id": 13
     }
   ]

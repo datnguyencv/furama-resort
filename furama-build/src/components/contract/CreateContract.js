@@ -74,7 +74,7 @@ export function CreateContract() {
                   roomId: +values.roomId,
                 });
                 resetForm();
-                alert("Thêm mới thành công")
+                toast("Thêm mới thành công")
                 navigate("/contract/list");
               };
               createContract();
@@ -178,7 +178,7 @@ export function CreateContract() {
               <Field
                 className="form-control form-control-lg"
                 id="form3Example1cg"
-                type="text"
+                type="number"
                 name="totalMoney"
               />
             </div>

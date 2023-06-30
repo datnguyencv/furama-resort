@@ -20,7 +20,7 @@ export function EditProduct() {
     async function fetchData() {
       const rs1 = await TypeProduct.getRentType();
       const rs2 = await TypeProduct.getRoomType();
-      const result = await ProductService.findId(param.id);
+      const result = await ProductService.findById(param.id);
       setRoomType(rs2);
       setRentType(rs1);
       setProduct(result);
@@ -69,7 +69,6 @@ export function EditProduct() {
           values.id = param.id;
           ProductService.update(values);
           setSubmitting(false);
-          alert("Thanh cong");
           toast("Cập nhật thành công");
           navigate("/product/list");
         } catch (error) {

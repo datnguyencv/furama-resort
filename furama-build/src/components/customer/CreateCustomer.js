@@ -80,7 +80,7 @@ function CreateCustomer() {
               Age: <span style={{ color: "red" }}>*</span>
             </label>
 
-            <Field type="text" className="form-control" id="age" name="age" />
+            <Field type="number" className="form-control" id="age" name="age" />
             <ErrorMessage name="age" component="span" className="form-err" />
           </div>
           <div className="mb-3">
